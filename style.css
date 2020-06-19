@@ -42,6 +42,94 @@ div {
 }
 */
 
+#email {
+    color:#339999;
+    font-size:12px;
+
+}
+
+
+
+/* bron: https://codepen.io/alxfyv/pen/qQEPxP*/
+/* outer wrapper: set max-width & max-height; max-height greater than padding-bottom % will be ineffective and height will = padding-bottom % of max-width */
+#Iframe-Master-CC-and-Rs {
+  max-width: 512px;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+/* inner wrapper: make responsive */
+.responsive-wrapper {
+  position: relative;
+  height: 0;    /* gets height from padding-bottom */
+
+  /* put following styles (necessary for overflow and scrolling handling on mobile devices) inline in .responsive-wrapper around iframe because not stable in CSS:
+    -webkit-overflow-scrolling: touch; overflow: auto; */
+
+}
+
+.responsive-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* padding-bottom = h/w as % -- sets aspect ratio */
+/* YouTube video aspect ratio */
+.responsive-wrapper-wxh-572x612 {
+  padding-bottom: 107%;
+}
+
+/* general styles */
+/* ============== */
+.set-border {
+  border: 2px inset #4f4f4f;
+}
+.set-box-shadow {
+  -webkit-box-shadow: 4px 4px 14px #4f4f4f;
+  -moz-box-shadow: 4px 4px 14px #4f4f4f;
+  box-shadow: 4px 4px 14px #4f4f4f;
+}
+.set-padding {
+/*  padding: 40px;*/
+}
+.set-margin {
+  margin: 30px;
+}
+.center-block-horiz {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/*einde bron*/
+
+/*https://www.w3schools.com/howto/howto_css_responsive_iframes.asp*/
+/*
+.box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;  16:9 Aspect Ratio (divide 9 by 16 = 0.5625)
+}
+*/
+
+/* Then style the iframe to fit in the container div with full height and width */
+/*
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+*/
 
 
 .mu-social-media a{
@@ -1177,7 +1265,8 @@ button:focus {
 /* RESPONSIVE STYLE */
 /*--------------------*/
 
-@media (max-width: 1199px) {
+/*@media (max-width: 1199px){*/
+@media (max-width: 1920px){
 
     .navbar-brand img {
         width: 145px;
@@ -1194,6 +1283,14 @@ button:focus {
 
     .mu-skill-progress-bar h3 {
         margin-top: 0;
+    }
+
+    #computer {
+        display:none;
+    }
+
+    iframe #mobile {
+        display:block;
     }
 
 
@@ -1246,6 +1343,8 @@ button:focus {
         padding: 0 50px;
     }
 
+
+}
 
 }
 
@@ -1327,6 +1426,10 @@ button:focus {
         bottom: 15px;
     }
 
+    iframe #mobile {
+        display:none;
+    }
+
 
 }
 
@@ -1406,7 +1509,9 @@ button:focus {
         padding: 20% 5%;
     }
 
-
+iframe #mobile {
+        display:none;
+    }
 
 }
 
@@ -1454,13 +1559,17 @@ button:focus {
     .mu-contact-content {
         padding: 0;
     }
+     iframe #mobile {
+        display:block;
+    }
 
-}
 
 }
 
 @media (max-width: 320px){
-
+iframe #mobile {
+        display:block;
+    }
 
 
 
